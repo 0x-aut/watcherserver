@@ -57,18 +57,18 @@ class PostureEvent(BaseEvent):
   Emitted after every processed frame
   For subscription in main.py to feed the FastAPI stat endpoint
   """
-  posture_ok: bool
-  neck_angle: float
-  shoulder_slope: float
-  head_offset: float
-  spine_lean: float
-  issues: list
-  session_score: int
-  good_seconds: int
-  bad_seconds: int
-  duration_seconds: int
-  keypoints_visible: bool
-  llm_context: str
+  posture_ok: bool = True
+  neck_angle: float = 0.0
+  shoulder_slope: float = 0.0
+  head_offset: float = 0.0
+  spine_lean: float = 0.0
+  issues: list = field(default_factory=list)
+  session_score: int = 100
+  good_seconds: int = 0
+  bad_seconds: int = 0
+  duration_seconds: int = 0
+  keypoints_visible: bool = True
+  llm_context: str = ""
   
   
 @dataclass
