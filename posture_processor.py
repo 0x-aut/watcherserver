@@ -57,6 +57,7 @@ class PostureEvent(BaseEvent):
   Emitted after every processed frame
   For subscription in main.py to feed the FastAPI stat endpoint
   """
+  type: str = "PostureEvent"
   posture_ok: bool = True
   neck_angle: float = 0.0
   shoulder_slope: float = 0.0
