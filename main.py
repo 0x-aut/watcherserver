@@ -51,7 +51,7 @@ runner = Runner(
     max_session_duration_seconds=7200,
   ),
   serve_options=ServeOptions(
-    cors_allow_origins=["http://localhost:3000"],
+    cors_allow_origins=["*"],
     cors_allow_methods=["GET", "POST", "DELETE"],
     cors_allow_headers=["*"],
     cors_allow_credentials=True,
