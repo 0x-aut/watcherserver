@@ -6,7 +6,7 @@ from collections import deque
 from dataclasses import dataclass, field
 from typing import Optional
 
-from vision_agents.core.events import Event
+from vision_agents.core.events import BaseEvent
 from vision_agents.core.processors import VideoProcessorPublisher
 from vision_agents.core.utils.video_forwarder import VideoForwarder
 from vision_agents.core.utils.video_track import QueuedVideoTrack
@@ -52,7 +52,7 @@ BAD_FRAME_STREAK_THRESHOLD = 25
 
 # DATA STRUCTURES
 @dataclass
-class PostureEvent(Event):
+class PostureEvent(BaseEvent):
   """
   Emitted after every processed frame
   For subscription in main.py to feed the FastAPI stat endpoint
